@@ -14,7 +14,7 @@ const LoginTemplate = ({
 }: LoginTemplateProps) => {
     return (
         <Center h="90vh">
-            <Card as={VStack} bg="gray.900" borderRadius="xl">
+            <Card as={VStack}>
                 <Box p={4} mb={2}>
                     {header}
                 </Box>
