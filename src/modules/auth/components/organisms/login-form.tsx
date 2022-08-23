@@ -10,7 +10,7 @@ type LoginFormData = {
     password: string;
 }
 
-const LoginForm = ({ }) => {
+const LoginForm = () => {
     const [loggingIn, setLoggingIn] = useState(false);
     const { register, handleSubmit, formState: { errors } } = useForm<LoginFormData>();
 
@@ -27,12 +27,14 @@ const LoginForm = ({ }) => {
                 label="E-mail"
                 register={register}
                 name="email"
+                error={errors["email"]?.message}
             />
             <PasswordField
                 label="Senha"
                 register={register}
                 name="password"
-                containerStyle={{mt: 2}}
+                error={errors["password"]?.message}
+                containerStyle={{ mt: 2 }}
             />
             <Button type="submit" mt={3} w="100%" isLoading={loggingIn}>Acessar</Button>
         </form>
