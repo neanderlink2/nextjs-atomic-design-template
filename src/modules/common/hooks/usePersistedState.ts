@@ -5,7 +5,8 @@ export function usePersistedState<T = any>(
     defaultState: T
   ): [T, React.Dispatch<React.SetStateAction<T>>] {
     const [state, setState] = useState<T>(
-      localStorage.getItem(key) ? JSON.parse(localStorage.getItem(key) ?? '') : defaultState
+      localStorage.getItem(key)
+        ? JSON.parse(localStorage.getItem(key) ?? '') : defaultState
     );
   
     useEffect(() => {
